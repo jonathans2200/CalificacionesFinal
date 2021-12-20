@@ -25,4 +25,46 @@ public class Actividad  implements Serializable{
     private  String descripcion;
     private double calificacion;
     private String observacion;
+
+    public int getIdActividad() {
+        return idActividad;
+    }
+
+    public void setIdActividad(int idActividad) {
+        this.idActividad = idActividad;
+    }
+
+    public String getTitulo() {
+        return titulo;
+    }
+
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public double getCalificacion() {
+        return calificacion;
+    }
+
+    public void setCalificacion(double calificacion) {
+        this.calificacion = calificacion;
+    }
+
+    public String getObservacion() {
+        return observacion;
+    }
+
+    public void setObservacion(String observacion) {
+        this.observacion = observacion;
+    }
+    
+    
 }
