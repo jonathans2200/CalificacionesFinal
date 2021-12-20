@@ -1,0 +1,10 @@
+ejb\PersonaFacade.class
+model\Persona.class
+model\Profesor.class
+model\Actividad.class
+model\Configuracion.class
+model\Representante.class
+ejb\EstudianteFacade.class
+model\Estudiante.class
+ejb\AbstractFacade.class
+model\Materia.class
