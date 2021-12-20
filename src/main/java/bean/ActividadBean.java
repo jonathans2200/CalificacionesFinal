@@ -9,6 +9,7 @@ import java.io.Serializable;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.inject.Named;
+import model.Actividad;
 
 /**
  *
@@ -59,5 +60,12 @@ public class ActividadBean implements Serializable{
 
 
 
-
+public String crearActividad(){
+    Actividad a=  new Actividad();
+    a.setTitulo(titulo);
+    a.setDescripcion(descripcion);
+    a.setObservacion(observacion);
+    
+    return null;
+}
 }
