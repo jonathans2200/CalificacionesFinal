@@ -27,6 +27,8 @@ public class Sesion implements Serializable {
     @ManyToOne
     private MateriaProfesor materiaProfesor;
     private String estado;
+    @OneToMany(mappedBy = "sesion")
+    private List<ActividadSesion> actividadSesion;
 
     public int getIdSesion() {
         return idSesion;
