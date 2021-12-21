@@ -30,6 +30,16 @@ public class Sesion implements Serializable {
     @OneToMany(mappedBy = "sesion")
     private List<ActividadSesion> actividadSesion;
 
+    public Sesion() {
+    }
+
+    public Sesion(MateriaProfesor materiaProfesor, String estado) {
+
+        this.materiaProfesor = materiaProfesor;
+        this.estado = estado;
+
+    }
+
     public int getIdSesion() {
         return idSesion;
     }
@@ -46,8 +56,6 @@ public class Sesion implements Serializable {
         this.estado = estado;
     }
 
-   
-
     public MateriaProfesor getMateriaProfesor() {
         return materiaProfesor;
     }
@@ -56,5 +64,4 @@ public class Sesion implements Serializable {
         this.materiaProfesor = materiaProfesor;
     }
 
- 
 }

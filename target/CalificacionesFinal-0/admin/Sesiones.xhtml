@@ -27,7 +27,7 @@
         <!-- summernote -->
         <link rel="stylesheet" href="../plantillas/plugins/summernote/summernote-bs4.min.css"/>
         <f:metadata>
-     
+
             <f:viewParam name="codigo" value="#{sesionBean.codigo}"></f:viewParam>
 
         </f:metadata>
@@ -155,54 +155,59 @@
             <!-- Main content -->
             <section class="content">
                 <div class="container-fluid">
-                    <div class="row">
-                        <div class="col col-md-3">
-                            <div class="card card-default">
-                                <div class="card card-body">
-
+                    <h:form>
+                        <div class="row">
+                            <div class="col col-md-3">
+                                <div class="card card-default">
+                                    <div class="card card-body">
+                                        <legend>Agregar Sesion</legend>
+                                        <hr></hr>
+                                        <div class="form-row">
+                                            <h:commandButton class="btn btn-lg btn-success" action="#{sesionBean.crearSesion}" value="CrearSesion"></h:commandButton>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row col-md-5 ">
-                            <h:form>
+                            <div class="row col-md-8 ">
+
                                 <div class="card card-default">
                                     <div class="card card-header">
                                         <h2>Listado de Sesiones</h2>
                                     </div>
                                     <div class="card-body">
 
-                                 
-                                    <div class="table-responsive">
-                                        <h:dataTable value="#{sesionBean.listaSesiones}" var="empleado" class="table">
-                                            <h:column>
-                                                <f:facet name="header">CODIGO</f:facet>#{empleado.idSesion}
-                                            </h:column>
 
-                                         
-                                            <h:column>
-                                                <f:facet name="header">Materia</f:facet>
-
-                                                <h:outputText value="#{empleado.materiaProfesor.materia.descripcion}" />
-                                            </h:column>
-                                             <h:column>
-                                                <f:facet name="header">Estado</f:facet>
-
-                                                <h:outputText value="#{empleado.estado}" />
-                                            </h:column>
-                                            <h:column>
-                                                <f:facet name="header"></f:facet>
-                                                <a href="SesionActividad.xhtml?codigo=#{empleado.idSesion}" class="btn btn-success">Iniciar</a>
-                                            </h:column>
+                                        <div class="table-responsive">
+                                            <h:dataTable value="#{sesionBean.listaSesiones}" var="empleado" class="table">
+                                                <h:column>
+                                                    <f:facet name="header">CODIGO</f:facet>#{empleado.idSesion}
+                                                </h:column>
 
 
-                                        </h:dataTable>  
+                                                <h:column>
+                                                    <f:facet name="header">Materia</f:facet>
+
+                                                    <h:outputText value="#{empleado.materiaProfesor.materia.descripcion}" />
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header">Estado</f:facet>
+
+                                                    <h:outputText value="#{empleado.estado}" />
+                                                </h:column>
+                                                <h:column>
+                                                    <f:facet name="header"></f:facet>
+                                                    <a href="SesionActividad.xhtml?codigo=#{empleado.idSesion}" class="btn btn-success">Iniciar</a>
+                                                </h:column>
+
+
+                                            </h:dataTable>  
+                                        </div>
                                     </div>
-                                           </div>
                                 </div>
-                            </h:form>
-                        </div>
-                    </div>
 
+                            </div>
+                        </div>
+                    </h:form>
 
 
                 </div><!-- /.container-fluid -->

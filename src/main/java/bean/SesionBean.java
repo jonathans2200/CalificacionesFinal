@@ -5,6 +5,7 @@
  */
 package bean;
 
+import ejb.MateriaProfesorFacade;
 import ejb.SesionFacade;
 import java.io.Serializable;
 import java.util.List;
@@ -13,6 +14,7 @@ import javax.ejb.EJB;
 import javax.enterprise.context.SessionScoped;
 import javax.faces.annotation.FacesConfig;
 import javax.inject.Named;
+import model.MateriaProfesor;
 import model.Sesion;
 
 /**
@@ -29,6 +31,10 @@ public class SesionBean implements Serializable {
 
     @EJB
     private SesionFacade ejbSesion;
+
+    @EJB
+    private MateriaProfesorFacade ejbMateriaProfesor;
+
     private String codigo;
     private List<Sesion> listaSesiones;
 
@@ -63,6 +69,16 @@ public class SesionBean implements Serializable {
     public void setListaSesiones(List<Sesion> listaSesiones) {
         this.listaSesiones = listaSesiones;
 
+    }
+
+    public String crearSesion() {
+        MateriaProfesor mp = ejbMateriaProfesor.buscarId(Integer.parseInt(codigo));
+        Sesion s = new Sesion();
+        s.setMateriaProfesor(mp);
+        s.setEstado("Pendiente");
+        ejbSesion.crear(s);
+        listaSesiones = ejbSesion.listarSesionProfesor(Integer.parseInt(codigo));
+        return null;
     }
 
 }

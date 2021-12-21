@@ -33,8 +33,7 @@ public class MateriaEstudiante implements Serializable{
     @JoinColumn(name = "idMateria", referencedColumnName = "idMateria")
     private Materia materias;
     
-     @OneToMany(mappedBy = "estudiante")
-    private List<MateriaEstudiante> actividadEstudiante;
+  
 
     public int getId() {
         return id;
@@ -60,14 +59,7 @@ public class MateriaEstudiante implements Serializable{
         this.materias = materias;
     }
 
-    public List<MateriaEstudiante> getActividadEstudiante() {
-        return actividadEstudiante;
-    }
-
-    public void setActividadEstudiante(List<MateriaEstudiante> actividadEstudiante) {
-        this.actividadEstudiante = actividadEstudiante;
-    }
-
+   
     
 
 

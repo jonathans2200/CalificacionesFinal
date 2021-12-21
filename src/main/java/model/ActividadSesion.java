@@ -12,6 +12,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Transient;
 
 /**
  *
@@ -31,12 +32,16 @@ public class ActividadSesion implements Serializable {
     private Actividad actividad;
 
     @ManyToOne
-    @JoinColumn(name = "idEstudiante", referencedColumnName = "idEstudiante")
+    @JoinColumn(name = "idSesion", referencedColumnName = "idSesion")
     private Sesion sesion;
 
     @ManyToOne
-    @JoinColumn(name = "id", referencedColumnName = "id")
-    private MateriaEstudiante estudiante;
+    private Estudiante estudiante;
+
+    private double calificaion;
+
+    @Transient
+    private boolean editable;
 
     public int getIdActSesion() {
         return idActSesion;
@@ -70,13 +75,28 @@ public class ActividadSesion implements Serializable {
         this.sesion = sesion;
     }
 
-    public MateriaEstudiante getEstudiante() {
+    public double getCalificaion() {
+        return calificaion;
+    }
+
+    public void setCalificaion(double calificaion) {
+        this.calificaion = calificaion;
+    }
+
+    public Estudiante getEstudiante() {
         return estudiante;
     }
 
-    public void setEstudiante(MateriaEstudiante estudiante) {
+    public void setEstudiante(Estudiante estudiante) {
         this.estudiante = estudiante;
     }
 
+    public boolean isEditable() {
+        return editable;
+    }
+
+    public void setEditable(boolean editable) {
+        this.editable = editable;
+    }
 
 }
