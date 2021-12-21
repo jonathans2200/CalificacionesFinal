@@ -5,9 +5,11 @@
  */
 package ejb;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.Query;
 import model.Actividad;
 import model.Estudiante;
 
@@ -28,5 +30,17 @@ public class ActividadFacade extends AbstractFacade<Actividad> {
     @Override
     protected EntityManager getEntityManager() {
         return em;
+    }
+
+
+public List<Actividad> listarSesionProfesor(int dato) {
+
+        String jpl = "select p from Actividad p Where p.sesion.idSesion =:dato";
+
+        Query q = em.createQuery(jpl, Actividad.class);
+        q.setParameter("dato", dato);
+        return (List<Actividad>) q.getResultList();
+
+        //return null;
     }
 }

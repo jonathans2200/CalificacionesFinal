@@ -10,6 +10,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 /**
  *
@@ -23,9 +24,19 @@ public class Actividad  implements Serializable{
     private int idActividad;
     private String titulo;
     private  String descripcion;
-    private double calificacion;
     private String observacion;
+    @ManyToOne
+    private Sesion sesion;
 
+    public Sesion getSesion() {
+        return sesion;
+    }
+
+    public void setSesion(Sesion sesion) {
+        this.sesion = sesion;
+    }
+    
+    
     public int getIdActividad() {
         return idActividad;
     }
@@ -50,13 +61,7 @@ public class Actividad  implements Serializable{
         this.descripcion = descripcion;
     }
 
-    public double getCalificacion() {
-        return calificacion;
-    }
-
-    public void setCalificacion(double calificacion) {
-        this.calificacion = calificacion;
-    }
+   
 
     public String getObservacion() {
         return observacion;
