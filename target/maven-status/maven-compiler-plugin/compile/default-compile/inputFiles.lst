@@ -10,6 +10,7 @@ C:\APP\CalificacionesFinal\src\main\java\ejb\EstudianteFacade.java
 C:\APP\CalificacionesFinal\src\main\java\model\Estudiante.java
 C:\APP\CalificacionesFinal\src\main\java\bean\MateriaBean.java
 C:\APP\CalificacionesFinal\src\main\java\model\Actividad.java
+C:\APP\CalificacionesFinal\src\main\java\rest\RepresentanteResource.java
 C:\APP\CalificacionesFinal\src\main\java\model\Materia.java
 C:\APP\CalificacionesFinal\src\main\java\ejb\AbstractFacade.java
 C:\APP\CalificacionesFinal\src\main\java\model\Sesion.java
@@ -19,6 +20,7 @@ C:\APP\CalificacionesFinal\src\main\java\model\Asistencia.java
 C:\APP\CalificacionesFinal\src\main\java\model\Profesor.java
 C:\APP\CalificacionesFinal\src\main\java\ejb\ActividadFacade.java
 C:\APP\CalificacionesFinal\src\main\java\ejb\PersonaFacade.java
+C:\APP\CalificacionesFinal\src\main\java\ejb\RepresentanteFacade.java
 C:\APP\CalificacionesFinal\src\main\java\bean\ActividadSesionBean.java
 C:\APP\CalificacionesFinal\src\main\java\ejb\ActividadSesionFacade.java
 C:\APP\CalificacionesFinal\src\main\java\bean\ActividadBean.java

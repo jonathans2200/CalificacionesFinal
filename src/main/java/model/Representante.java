@@ -12,6 +12,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 
 /**
@@ -28,8 +29,7 @@ public class Representante implements Serializable {
     private String contrasena;
     @OneToOne
     private Persona persona;
-    @ManyToOne
-    private Estudiante estudiante;
+   
 
     public Representante() {
     }
@@ -38,7 +38,7 @@ public class Representante implements Serializable {
         this.correo = correo;
         this.contrasena = contrasena;
         this.persona = persona;
-        this.estudiante = estudiante;
+      
     }
 
     public int getIdRepresentante() {
@@ -72,15 +72,4 @@ public class Representante implements Serializable {
     public void setPersona(Persona persona) {
         this.persona = persona;
     }
-
-    public Estudiante getEstudiante() {
-        return estudiante;
-    }
-
-    public void setEstudiante(Estudiante estudiante) {
-        this.estudiante = estudiante;
-    }
-
-    
-
 }

@@ -12,6 +12,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Transient;
@@ -34,6 +35,9 @@ public class Estudiante implements Serializable {
     private Persona persona;
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "estudiante")
     private List<MateriaEstudiante> estudianteMateria;
+
+    @ManyToOne
+    private Representante representante;
 
     public Estudiante() {
     }
@@ -92,5 +96,12 @@ public class Estudiante implements Serializable {
         this.estudianteMateria = estudianteMateria;
     }
 
+    public Representante getRepresentante() {
+        return representante;
+    }
+
+    public void setRepresentante(Representante representante) {
+        this.representante = representante;
+    }
 
 }
